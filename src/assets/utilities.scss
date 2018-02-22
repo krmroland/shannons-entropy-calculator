@@ -1,0 +1,16 @@
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+.flex-end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: flex-between;
+	align-items: center;
+}
