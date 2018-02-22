@@ -1,9 +1,10 @@
-import Information from "./Information";
-import Probability from "./Probability";
-import Entropy from "./Entropy";
 import countBy from "lodash/countBy";
 import Vue from "vue";
 import set from "lodash/set";
+/**
+ * class for performing related calculations
+ * @see  http://www.cs.csi.cuny.edu/~imberman/ai/Entropy%20and%20Information%20Gain.htm
+ */
 class Calculator {
 	constructor(rows) {
 		Vue.set(this, "rows", rows);
@@ -58,20 +59,11 @@ class Calculator {
 			-1 * fraction * Math.log2(fraction)
 		);
 	}
-	get information() {
-		return new Information(this);
-	}
+
 	get selectedColumns() {
 		return this.rows.headers;
 	}
 
-	get probability() {
-		return new Probability(this);
-	}
-
-	get entropy() {
-		return new Entropy(this);
-	}
 	get allCounts() {
 		let counts = {};
 
